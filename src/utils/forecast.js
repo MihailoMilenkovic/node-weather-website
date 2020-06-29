@@ -11,9 +11,15 @@ const forecast = (lattitude, longitude, callback) => {
       callback(`error:${body.message}`, undefined);
     } else {
       //console.log(response);
+      // console.log(
+      //   body.main.temp_min,
+      //   body.main.temp_max,
+      //   body.weather[0].description
+      // );
       callback(
         undefined,
-        `The temperature is ${body.main.temp} degrees. The pressure is ${body.main.pressure} mbar. The humidity is ${body.main.humidity}%.`
+        `Current Weather: ${body.weather[0].description}.
+         The temperature is ${body.main.temp} degrees. The pressure is ${body.main.pressure} mbar. The humidity is ${body.main.humidity}%.`
       );
     }
   });
